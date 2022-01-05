@@ -1,0 +1,63 @@
+<div class="load-more">
+  <div *ngIf="!isLoading && totalItemsCount === 0; else showLoader">
+    <nz-empty
+      [nzNotFoundImage]="'simple'"
+      [nzNotFoundContent]="'No devices'"
+    ></nz-empty>
+  </div>
+  <ng-template #showLoader>
+    <div *ngIf="isLoading && pageIndex === 1; else showLoaderMore">
+      <div nz-row nzJustify="center" nzAlign="middle">
+        <nz-spin nzSimple></nz-spin>
+      </div>
+    </div>    
+    <ng-template #showLoaderMore>
+      <div class="load-more-divider">
+        <nz-divider></nz-divider>
+      </div>
+      <div *ngIf="moreItems">
+        <div nz-row nzJustify="center">
+          <div nz-col>
+            <nz-divider
+              nzType="vertical"
+              class="load-more-line"
+            ></nz-divider>
+          </div>
+        </div>
+        <div nz-row nzJustify="center">
+          <div nz-col>
+              <button
+                nz-button
+                nzType="default"
+                [nzLoading]="isLoading"
+                (click)="onLoadMore()"
+                class="load-more-button" 
+              >{{ loadMoreItemsText }}</button>    
+          </div>
+        </div>
+      </div>
+      <div nz-row nzJustify="center">
+        <div nz-col>
+          <nz-divider
+            nzType="vertical"
+            class="load-more-line"
+          >
+          </nz-divider>
+        </div>
+      </div>
+      <div nz-row nzJustify="center">
+        <div nz-col>
+          <div *ngIf="moreItems; else noMoreItems">
+            <i nz-icon nzType="down"></i>
+          </div>
+          <ng-template #noMoreItems>
+            <div class="load-no-more">
+              {{ noMoreItemsTitle }}
+            </div>      
+          </ng-template>
+        </div>
+      </div>
+    </ng-template>
+    
+  </ng-template>  
+</div>

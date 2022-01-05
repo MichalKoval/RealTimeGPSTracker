@@ -1,0 +1,55 @@
+<div class="realtime-filter-panel">
+  <!-- DateTime from and to picker -->
+  <div class="realtime-filter-datetime-range-picker">
+    <nz-range-picker
+      [nzShowTime]="{ nzFormat: 'HH:mm' }"
+      nzFormat="yyyy-MM-dd HH:mm"
+      [nzPlaceHolder]="['From', 'To']"
+      ngModel
+      (nzOnOk)="onRangeDateOk($event)"
+    ></nz-range-picker>
+  </div>
+  <!-- Order and OrderBy filter -->
+  <div class="realtime-filter-order-input-group">
+    <nz-input-group nzCompact>
+      <button
+        nz-button
+        nzType="default"
+        nz-tooltip
+        [nzTooltipTitle]="'Ordered ' + selectedOrder.toString()"
+        nzTooltipPlacement="top"
+        (click)="onOrderButtonClick()"
+      >
+        <i
+          *ngIf="selectedOrder.toString() === 'Asc'"
+          nz-icon
+          nzType="sort-ascending"
+          nzTheme="outline">
+        </i>
+        <i
+          *ngIf="selectedOrder.toString() === 'Desc'"
+          nz-icon
+          nzType="sort-descending"
+          nzTheme="outline">
+        </i>
+      </button>
+      <nz-select
+        [(ngModel)]="selectedOrderBy"
+        nz-tooltip
+        [nzTooltipTitle]="'Ordered By ' + selectedOrderBy.toString()"
+        nzTooltipPlacement="top"
+      >
+        <nz-option [nzLabel]="'Start'" [nzValue]="'Start'"></nz-option>
+        <nz-option [nzLabel]="'End'" [nzValue]="'End'"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+  <!-- Search button -->
+  <div class="realtime-filter-button">
+    <button
+      nz-button nzType="primary"
+      (click)="onSearchHistory()"
+    >Search
+    </button>
+  </div>
+</div>

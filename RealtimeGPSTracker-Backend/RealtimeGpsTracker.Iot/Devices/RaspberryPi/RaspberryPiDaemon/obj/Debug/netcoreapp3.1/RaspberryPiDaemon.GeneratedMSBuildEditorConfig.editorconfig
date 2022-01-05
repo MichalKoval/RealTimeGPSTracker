@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = RaspberryPiDaemon
+build_property.ProjectDir = C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Iot\Devices\RaspberryPi\RaspberryPiDaemon\

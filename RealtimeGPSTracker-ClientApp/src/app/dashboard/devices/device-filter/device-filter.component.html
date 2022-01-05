@@ -1,0 +1,92 @@
+<div class="device-filter-panel">
+  <!-- Filter options -->
+  <div class="device-filter-select-group">
+    <div class="device-filter-label">
+      <strong>Filter:</strong>
+    </div>
+    <!-- <nz-radio-group
+      [ngModel]="selectedStatus"
+      (ngModelChange)="onSelectStatusChange($event)"
+    >
+      <label *ngFor="let deviceStatusButton of deviceStatusButtons"
+        nz-radio-button
+        [nzValue]="deviceStatusButton.deviceStatusType">{{ deviceStatusButton.name }}
+        <nz-badge
+          [nzCount]="deviceCounts[deviceStatusButton.deviceStatusType]"
+          [nzShowZero]="deviceStatusButton.showZero"
+          [nzStyle]="deviceStatusButton.style"
+          class="device-status-button-badge"
+        >
+        </nz-badge>
+      </label>
+    </nz-radio-group> -->
+    <nz-input-group nzCompact>
+      <nz-select
+        [nzMaxTagCount]="3"
+        [nzMaxTagPlaceholder]="tagPlaceHolder"
+        nzMode="multiple"
+        nzPlaceHolder="+ Add filter"
+        [nzBorderless]="false"
+        [ngModel]="selectedFilterCriteria"
+        (ngModelChange)="onSelectedFilterCriteria($event)"
+      >
+        <nz-option
+          *ngFor="let filterTagOption of filterTagOptions"
+          [nzLabel]="filterTagOption.description"
+          [nzValue]="filterTagOption"
+        >
+        </nz-option>
+      </nz-select>
+      <ng-template
+        #tagPlaceHolder
+        let-selectedOptions
+      > and {{ selectedOptions.length }} more selected
+      </ng-template>
+    </nz-input-group>
+  </div>
+  <!-- Sort options -->
+  <div class="device-filter-input-group">
+    <div class="device-filter-label">
+      <strong>Sort:</strong>
+    </div>
+    <nz-input-group nzCompact>
+      <button
+        nz-button
+        nzType="default"s
+        nz-tooltip
+        [nzTooltipTitle]="'Ordered ' + selectedOrder.toString()"
+        nzTooltipPlacement="top"
+        (click)="onSelectedOrderChange()"
+      >
+        <i
+          *ngIf="selectedOrder.toString() === 'Asc'"
+          nz-icon
+          nzType="sort-ascending"
+          nzTheme="outline">
+        </i>
+        <i
+          *ngIf="selectedOrder.toString() === 'Desc'"
+          nz-icon
+          nzType="sort-descending"
+          nzTheme="outline">
+        </i>
+      </button>
+      <nz-select
+        [ngModel]="selectedOrderBy"
+        (ngModelChange)="onSelectedOrderByChange($event)"
+        nz-tooltip
+        [nzTooltipTitle]="'Ordered By ' + selectedOrderBy.toString()"
+        nzTooltipPlacement="top"
+      >
+        <nz-option [nzLabel]="'Name'" [nzValue]="'Name'"></nz-option>
+        <nz-option [nzLabel]="'CreateTime'" [nzValue]="'CreateTime'"></nz-option>
+        <nz-option [nzLabel]="'Interval'" [nzValue]="'Interval'"></nz-option>
+        <nz-option [nzLabel]="'Status'" [nzValue]="'Status'"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+</div>
+
+<div class="device-filter-panel-divider">
+  <nz-divider></nz-divider>
+</div>

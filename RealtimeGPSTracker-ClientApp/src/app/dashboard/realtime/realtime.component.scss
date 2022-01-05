@@ -1,0 +1,57 @@
+nz-list {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+nz-list-item {
+    padding: 0px 0px;
+}
+
+.realtime-search-container {
+    display: block;
+    justify-content: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.realtime-search-query-container {
+    margin: 13px 40px 0px 40px;
+}
+
+.realtime-search-result-container {
+    margin: 0px;
+}
+
+.realtime-result-no-devices-container {
+    margin-bottom: 20px;
+}
+
+.realtime-result-infinite-list-container {
+    margin-top: 2px;
+    height: 135px;
+    //border: 1px solid #e8e8e8;
+    //border-radius: 3px;
+}
+
+.realtime-search-spinner {
+    margin: 12px 0px 18px 0px;
+}
+
+.realtime-search-error {
+    margin-top: 2px;
+    max-width: 442px;
+}
+
+.realtime-search-collapsible {
+    margin-top: 10px;
+    padding: 0px 10px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.realtime-search-divider {
+    margin: 15px 40px 0px 40px;
+}
+
+.realtime-search-divider nz-divider {
+    margin: 15px 0px 0px 0px;
+}

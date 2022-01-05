@@ -1,0 +1,32 @@
+<!-- Sidebar -->
+<app-sidebar 
+  [(isCollapsed)]="isCollapsed"
+  [userName]="(user$ | async)?.userName"
+  [userDescription]=""
+  [userAvatarSrc]=""
+  [menuTitle]="sidebarMenuTitle"
+  [menuItems]="sidebarMenuItems"
+  [darkMode]="false"
+  (isLogoutButtonPressed)="onLogoutButtonPressed($event)"
+></app-sidebar> 
+<nz-layout class="inner-layout">
+  <!-- Header -->
+  <app-header
+    [(isCollapsed)]="isCollapsed"
+    [title]="(headerTitle$ | async)"
+    [componentHeight]="headerHeight"
+  ></app-header>
+  
+  <!-- Main content -->
+  <nz-content>
+    <!-- <div class="inner-content"> -->
+      <router-outlet></router-outlet>
+    <!-- </div> -->
+  </nz-content>
+
+  <!-- Footer -->
+  <app-footer
+    [title]="footerTitle"
+    [componentHeight]="footerHeight"
+  ></app-footer>
+</nz-layout>

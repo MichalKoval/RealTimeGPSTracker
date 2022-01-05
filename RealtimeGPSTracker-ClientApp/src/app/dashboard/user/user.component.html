@@ -1,0 +1,160 @@
+<div class="user-content">    
+    <nz-divider nzText="User detail" nzOrientation="left"></nz-divider>
+
+    <div *ngIf="!(userIsLoading$ | async); else spinner">
+        <div *ngIf="(userLoaded$ | async); else error">
+            <form nz-form [formGroup]="validateUserDetailEditForm" (ngSubmit)="onSaveUserDetail()">
+        
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="userName">
+                        <span>
+                        Username
+                        </span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Username">
+                        <input nz-input id="userName" formControlName="userName" />
+                    </nz-form-control>
+                </nz-form-item>
+            
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="firstName">
+                        <span>
+                        Firstname
+                        <i
+                            nz-icon
+                            nz-tooltip
+                            nzTooltipTitle="First name is optional"
+                            nzType="question-circle"
+                            nzTheme="outline"
+                        ></i>
+                        </span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <input nz-input id="firstName" formControlName="firstName" />
+                    </nz-form-control>
+                </nz-form-item>
+            
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="lastName">
+                        <span>
+                        Lastname
+                        <i
+                            nz-icon
+                            nz-tooltip
+                            nzTooltipTitle="Last name is optional"
+                            nzType="question-circle"
+                            nzTheme="outline"
+                        ></i>
+                        </span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <input nz-input id="lastName" formControlName="lastName" />
+                    </nz-form-control>
+                </nz-form-item>
+            
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="email" nzRequired>E-mail</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <input nz-input formControlName="email" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+                
+                <nz-form-item nz-row>
+                <nz-form-control
+                    nz-col
+                    [nzXs]="{ span: 14, offset: 0 }"
+                    [nzSm]="{ span: 14, offstet: 7 }"
+                    [nzLg]="{ span: 14, offset: 7 }"
+                >
+                    <button nz-button nzType="primary">Save</button>
+                </nz-form-control>
+                </nz-form-item>
+            </form>
+            
+            <nz-divider nzText="Change user password" nzOrientation="left"></nz-divider>
+            <!-- <div class="form-group-divider"></div> -->
+            
+            <form nz-form [formGroup]="validateUserPasswordEditForm" (ngSubmit)="onChangeUserPassword()">
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="password" nzRequired>New Password</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+                    <input
+                        nz-input
+                        type="password"
+                        id="password"
+                        formControlName="password"
+                        (ngModelChange)="updatePasswordConfirmValidator()"
+                    />
+                    </nz-form-control>
+                </nz-form-item>
+            
+                <nz-form-item>
+                    <nz-form-label [nzSm]="7" [nzXs]="24" nzFor="checkPassword" nzRequired>Confirm Password</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
+                    <input nz-input type="password" formControlName="checkPassword" id="checkPassword" />
+                    <ng-template #errorTpl let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                        Please confirm your password!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('confirm')">
+                        Two passwords that you enter are inconsistent!
+                        </ng-container>
+                    </ng-template>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item nz-row>
+                    <nz-form-control
+                        nz-col
+                        [nzXs]="{ span: 14, offset: 0 }"
+                        [nzSm]="{ span: 14, offstet: 7 }"
+                        [nzLg]="{ span: 14, offset: 7 }"
+                    >
+                        <button nz-button nzType="primary">Change Password</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+            
+            <nz-divider nzText="Delete user account" nzOrientation="left"></nz-divider>
+            <!-- <div class="form-group-divider"></div> -->
+            
+            <div nz-row>
+                <div
+                    nz-col
+                    [nzXs]="{ span: 14, offset: 0 }"
+                    [nzSm]="{ span: 14, offstet: 7 }"
+                    [nzLg]="{ span: 14, offset: 7 }"
+                >
+                    <p>By deleting the user account you will no longer be able to access your trips and devices. All data will be permanently deleted.</p>
+                </div>
+                <div
+                    nz-col [nzXs]="{ span: 14, offset: 0 }"
+                    [nzSm]="{ span: 14, offstet: 7 }"
+                    [nzLg]="{ span: 14, offset: 7 }"
+                >
+                    <button nz-button nzType="default" nzDanger (click)="onDeleteUser()">Delete</button>
+                </div>
+            </div>
+        </div>
+        <ng-template #error>
+            <div nz-row nzJustify="center" nzAlign="middle">
+                <div *ngIf="(userError$ | async)">
+                    <nz-alert
+                        nzType="error"
+                        nzMessage="Error"
+                        [nzDescription]="(userError$ | async).join('\n')"
+                    >
+                    </nz-alert>
+                  </div>
+            </div>
+        </ng-template>
+    </div>
+    <ng-template #spinner>
+        <div nz-row nzJustify="center" nzAlign="middle">
+            <nz-spin nzSimple></nz-spin>
+        </div>
+    </ng-template>
+</div>
+
+
+
+

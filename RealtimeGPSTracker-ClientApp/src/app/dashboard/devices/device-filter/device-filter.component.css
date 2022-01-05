@@ -1,0 +1,50 @@
+:host {
+    display: block;
+}
+
+.device-filter-panel {
+    display: table;
+    padding-left: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.device-filter-radio-group {
+    margin: 0 8px 12px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.device-filter-select-group {
+    margin: 0 8px 12px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.device-filter-select-group nz-select {
+    min-width: 98px;
+}
+
+.device-filter-input-group {
+    margin: 0 8px 12px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.device-filter-label {
+    display: flex;
+    align-items: center;
+}
+
+.device-filter-panel-divider {
+    margin: 15px 0px 0px 0px;
+}
+
+.device-filter-panel-divider nz-divider {
+    margin: 15px 0px 0px 0px;
+}
+
+.device-status-button-badge {
+    margin-top: -2px;
+    margin-left: 4px;
+}

@@ -1,0 +1,54 @@
+<div class="realtime-search-container">
+  <div class="realtime-search-container-content">
+      <div class="realtime-search-result-container">
+        <div *ngIf="!(devicesDataLoading$ | async); else spinner">
+            <!-- <nz-divider nzText="Search result" nzOrientation="center"></nz-divider> -->
+            
+            <div *ngIf="(devicesDataLoaded$ | async); else error">
+                <div class="realtime-search-divider">
+                    <nz-divider></nz-divider>
+                </div>
+                <div *ngIf="(devicesData$ | async).length > 0, else noDeviceDataTemplate">
+                    <cdk-virtual-scroll-viewport itemSize="73" class="realtime-result-infinite-list-container">
+                        <nz-list>                            
+                            <nz-list-item *cdkVirtualFor="let deviceItem of (devicesData$ | async)">
+                              <app-realtime-item
+                                [deviceItem]="deviceItem"
+                                (isSelectedChange)="onRealtimeItemSelectedChange()"
+                              ></app-realtime-item>
+                            </nz-list-item>                            
+                        </nz-list>
+                    </cdk-virtual-scroll-viewport>  
+                </div>
+                <ng-template #noDeviceDataTemplate>
+                    <div class="realtime-result-no-devices-container">
+                        <nz-empty
+                            [nzNotFoundImage]="'simple'"
+                            [nzNotFoundContent]="'There are no Online or Away devices available at the moment'"
+                        ></nz-empty>
+                    </div>
+                </ng-template>                        
+            </div>
+            <ng-template #error>
+                <div nz-row nzJustify="center" nzAlign="middle">
+                    <nz-alert
+                        nzType="error"
+                        nzMessage="Error"
+                        [nzDescription]="(devicesDataError$ | async).join('\n')"
+                        class="realtime-search-error"
+                    ></nz-alert>
+                </div>
+            </ng-template>
+        </div>
+        <ng-template #spinner>
+        <div nz-row nzJustify="center" nzAlign="middle" class="realtime-search-spinner">
+            <nz-spin nzSimple></nz-spin>
+        </div>
+        </ng-template>
+    </div>
+  </div>
+</div>
+
+<app-map
+  [resize]="(isLeftSidebarCollapsed$ | async)"
+></app-map>

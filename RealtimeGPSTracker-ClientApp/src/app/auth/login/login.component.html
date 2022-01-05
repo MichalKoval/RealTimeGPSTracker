@@ -1,0 +1,58 @@
+<form nz-form [formGroup]="validateLoginForm" class="login-form" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your username!">
+      <nz-input-group nzPrefixIcon="user">
+        <input type="text" nz-input formControlName="userName" placeholder="Username or email" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your Password!">
+      <nz-input-group nzPrefixIcon="lock">
+        <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <div class="login-form-margin login-form-options">
+    <div class="login-form-options-item">
+      <div class="login-form-options-item-left">
+        <label nz-checkbox formControlName="rememberSignIn">
+          <span>Remember me</span>
+        </label>
+      </div>      
+    </div>
+    <!-- <div class="login-form-options-item">
+      <div class="login-form-options-item-right">
+        <a>Forgot password</a>
+      </div>      
+    </div> -->
+  </div>
+  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+  Or
+  <a [routerLink]="['/auth/register']">register now!</a>  
+
+  <div *ngIf="!(loginIsLoading$ | async); else spinner">
+    <!-- <nz-divider nzText="Search result" nzOrientation="center"></nz-divider> -->
+    
+    <div *ngIf="(loginLoaded$ | async); else error"></div>
+    <ng-template #error>      
+      <div nz-row nzJustify="center" nzAlign="middle">
+        <div *ngIf="(loginError$ | async)">
+          <nz-alert
+            nzType="error"
+            [nzDescription]="(loginError$ | async).join('\n')"
+            class="login-error"
+          >
+          </nz-alert>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #spinner>
+    <div nz-row nzJustify="center" nzAlign="middle" class="login-spinner">
+        <nz-spin nzSimple></nz-spin>
+    </div>
+  </ng-template>
+
+</form>

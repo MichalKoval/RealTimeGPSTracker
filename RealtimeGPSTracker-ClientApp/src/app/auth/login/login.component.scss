@@ -1,0 +1,50 @@
+.login-form-button {
+    width: 100%;
+}
+
+.login-form-margin {
+    margin-bottom: 16px;
+}
+
+.login-form-options-item-left {
+    float: left;
+    margin-right: 9px;
+}
+
+.login-form-options-item-right {
+    float: right;
+    margin-left: 9px;
+}
+
+
+$login-form-option-width: 150px;
+$login-form-option-margin: 10px;
+
+
+.login-form-options {
+  /* container grid property */
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, $login-form-option-width);
+//   grid-gap: $login-form-option-margin;
+//   justify-content: center;
+//   align-content: flex-start;
+
+//   overflow: auto;
+//   margin: 0px;
+    display: table;
+    //width: 100%;
+    table-layout: fixed;
+}
+
+.login-form-options-item {
+    display: table-cell;
+}
+
+.login-spinner {
+    margin-top: 12px;
+}
+
+.login-error {
+    margin-top: 16px;
+    max-width: 245px;
+}

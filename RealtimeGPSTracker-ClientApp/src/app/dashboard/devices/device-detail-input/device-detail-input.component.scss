@@ -1,0 +1,61 @@
+$debug: false;
+
+.device-detail-input {
+    display: inline-block;
+    vertical-align: top;
+    width: 100vh;
+    border: 0px;
+    padding: 0px;
+    margin: 4px 0px 0px 15px;
+    @if $debug { background-color: steelblue; }
+}
+
+.device-detail-input-row {
+    display: block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: slateblue; }
+}
+
+.device-detail-input-row-title {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a7a7a7;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(73, 66, 117); }
+}
+
+.device-detail-input-row-value {
+    display: block;
+    overflow: hidden;
+    height: 25px;
+    font-weight: 500;
+    color: #314659;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(51, 36, 151); }
+}
+
+.device-detail-input-row-value input {
+    display: block;
+    width: 181px;
+    height: 21px;
+    padding: 0px 7px;
+    margin-top: 2px;
+    @if $debug { background-color: rgb(127, 116, 196); }
+}
+
+.device-detail-input-row-value nz-tag {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    @if $debug { background-color: rgb(73, 64, 128); }
+}
+
+.ant-form-item-control-input-content {
+    height: 32px !important;
+}

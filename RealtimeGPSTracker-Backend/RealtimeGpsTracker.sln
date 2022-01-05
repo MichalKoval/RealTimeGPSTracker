@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtimeGpsTracker.Api", "RealtimeGpsTracker.Api\RealtimeGpsTracker.Api.csproj", "{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtimeGpsTracker.Core", "RealtimeGpsTracker.Core\RealtimeGpsTracker.Core.csproj", "{50BF2003-807C-4849-A41C-B9AB766C7242}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtimeGpsTracker.Infrastructure", "RealtimeGpsTracker.Infrastructure\RealtimeGpsTracker.Infrastructure.csproj", "{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtimeGPSTracker.Application", "RealtimeGPSTracker.Application\RealtimeGPSTracker.Application.csproj", "{8FC3E849-D550-4632-A602-40AECA513F41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealtimeGpsTracker.Iot", "RealtimeGpsTracker.Iot", "{9D558C0E-B445-4E1F-AA28-DC97A43910A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Devices", "Devices", "{7B259D83-875D-42C8-A658-F9A7817A442B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RaspberryPi", "RaspberryPi", "{5B00CAAC-9220-4DCF-A8A3-0342C35B9E15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPiDaemon", "RealtimeGpsTracker.Iot\Devices\RaspberryPi\RaspberryPiDaemon\RaspberryPiDaemon.csproj", "{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealtimeGpsTracker.Api.Insomnia", "RealtimeGpsTracker.Api.Insomnia", "{25F0A22B-8CD5-464E-BC17-26EF51F037D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Debug|x86.Build.0 = Debug|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Release|x86.ActiveCfg = Release|Any CPU
+		{4DBB06D1-A0DE-4F9A-9D5A-A8C193409983}.Release|x86.Build.0 = Release|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Debug|x86.Build.0 = Debug|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Release|x86.ActiveCfg = Release|Any CPU
+		{50BF2003-807C-4849-A41C-B9AB766C7242}.Release|x86.Build.0 = Release|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Debug|x86.Build.0 = Debug|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2D0F0A9-04FC-4F41-8C08-E83B174FF605}.Release|x86.Build.0 = Release|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Debug|x86.Build.0 = Debug|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Release|x86.ActiveCfg = Release|Any CPU
+		{8FC3E849-D550-4632-A602-40AECA513F41}.Release|x86.Build.0 = Release|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Debug|x86.Build.0 = Debug|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Release|x86.ActiveCfg = Release|x86
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B259D83-875D-42C8-A658-F9A7817A442B} = {9D558C0E-B445-4E1F-AA28-DC97A43910A0}
+		{5B00CAAC-9220-4DCF-A8A3-0342C35B9E15} = {7B259D83-875D-42C8-A658-F9A7817A442B}
+		{3D0F9631-72BC-4BC6-8A2A-68F65F72E5F7} = {5B00CAAC-9220-4DCF-A8A3-0342C35B9E15}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35387BF7-5EFD-46AF-AEE6-4C2E4F50A052}
+	EndGlobalSection
+EndGlobal

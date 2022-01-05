@@ -1,0 +1,183 @@
+$debug: false;
+$item-width: 320px;
+
+.devices-new-container {
+    margin: 24px auto;
+    width: $item-width;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 3px 15px -4px rgba(0,0,0,0.31);
+    -moz-box-shadow: 4px 3px 15px -4px rgba(0,0,0,0.31);
+    box-shadow: 4px 3px 15px -4px rgba(0,0,0,0.31);
+    overflow: hidden;
+    //border: 1px solid #3146595e;
+    @if $debug { background-color: sandybrown; }
+    @else { background-color: #ffffff; }
+}
+
+.device-new-container-left {
+    float: left;
+    width: 9px;
+    height: 185px;
+}
+
+.device-new {
+    border: 0px;
+    padding: 4px;
+}
+
+.device-new-header {
+    display: block;
+    border: 0px;
+    padding: 0px 0px 0px 19px;
+    @if $debug { background-color: mediumspringgreen; }
+}
+
+.device-new-body {
+    display: block;
+    border: 0px;
+    padding: 0px;
+    @if $debug { background-color: yellowgreen;  }
+}
+
+.device-new-status {
+    display: inline-block;
+    width: 102px;
+    margin: auto 0px auto 12px;
+    @if $debug { background-color: greenyellow; }
+}
+
+.device-new-creation-time {
+    display: inline-block;
+    margin: auto 0px;
+    @if $debug { background-color: hotpink; }
+}
+
+.device-new-checkbox {
+    display: block;
+    margin: auto 3px auto 0px;
+    float: right;
+    @if $debug { background-color: lightblue; }
+}
+
+.device-new-confirm-button {
+    display: inline-block;
+    margin: auto 0px;
+    @if $debug { background-color: lightslategray; }
+}
+
+.device-new-confirm-button a {
+    margin: auto;
+    font-size: 18px;
+    float: right;
+    color: #697b8c;
+}
+
+.device-new-confirm-button a:hover {
+    color: #1890ff;
+}
+
+.device-new-settings {
+    display: inline-block;
+    vertical-align: top;
+    width: 292px;
+    border: 0px;
+    padding: 0px;
+    margin: 4px 0px 0px 15px;
+    @if $debug { background-color: steelblue; }
+}
+
+.device-new-settings-confirm-buttons {
+    display: block;
+    float: right;
+    padding: 0px;
+}
+
+.device-new-settings-confirm-button {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #697b8c;
+}
+
+.device-new-settings-confirm-button:hover {
+    color: #1890ff;
+}
+
+.device-new-settings-save-button {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #005504;
+}
+
+.device-new-settings-save-button:hover {
+    color: #00cf0a;
+}
+
+.device-new-settings-cancel-button {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #910000;
+}
+
+.device-new-settings-cancel-button:hover {
+    color: #e00000;
+}
+
+.device-new-settings-row {
+    display: block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: slateblue; }
+}
+
+.device-new-settings-row-title {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a7a7a7;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(73, 66, 117); }
+}
+
+.device-new-settings-row-value {
+    display: block;
+    overflow: hidden;
+    height: 25px;
+    font-weight: 500;
+    color: #314659;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(51, 36, 151); }
+}
+
+.device-new-settings-row-value input {
+    display: block;
+    width: 280px;
+    height: 21px;
+    padding: 0px 7px;
+    margin-top: 2px;
+    @if $debug { background-color: rgb(127, 116, 196); }
+}
+
+.device-new-settings-row-value nz-tag {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    @if $debug { background-color: rgb(73, 64, 128); }
+}
+
+.device-new-divider {
+    margin: 0px 40px
+}
+
+.device-new-divider nz-divider {
+    margin: 15px 0px 0px 0px;
+}

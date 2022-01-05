@@ -1,0 +1,19 @@
+<nz-header>
+  <i
+    class="trigger"
+    nz-icon
+    [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+    (click)="onCollapsedChange()"
+  ></i>
+</nz-header>
+<nz-page-header class="inner-layout-page-header">
+  <span>
+    <i
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      (click)="onCollapsedChange()"
+    ></i>
+  </span>
+  <nz-page-header-title>{{title}}</nz-page-header-title>
+</nz-page-header>

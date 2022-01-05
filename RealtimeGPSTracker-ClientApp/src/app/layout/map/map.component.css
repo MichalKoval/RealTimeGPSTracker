@@ -1,0 +1,44 @@
+.map-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+.map-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    width: 100%;
+    /* height: 100vh; */
+    height: calc(100vh - 213px);
+}
+
+.ol-zoom {
+    bottom: .5em !important;
+    left: .5em;
+}
+
+/* .header-transparent {
+    position: absolute;
+    background-color: white;
+    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
+
+    color: black;
+    top: 500px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    z-index: 2000;
+} */

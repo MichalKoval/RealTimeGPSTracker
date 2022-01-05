@@ -1,0 +1,64 @@
+<!-- Device detail - input form -->
+<form nz-form [formGroup]="validateDeviceDetailInputForm" (ngSubmit)="onDeviceDetailSubmit()">
+  <!-- Device detail - input row name -->
+  <div class="device-detail-input-row">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input device name!">
+        <!-- Device detail - input row title -->
+        <div class="device-detail-input-row-title">name</div>
+        <!-- Device detail - input row value -->
+        <div class="device-detail-input-row-value">
+          <input
+            nz-input
+            [nzSize]="deviceDetailSize"          
+            formControlName="name"
+          />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+
+  <!-- Device detail - input row interval (ms)-->
+  <div class="device-detail-input-row">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input device interval (milliseconds)!">
+        <!-- Device detail - input row title -->
+        <div class="device-detail-input-row-title">interval (ms)</div>
+        <!-- Device detail - input row value -->
+        <div class="device-detail-input-row-value">
+          <input
+            nz-input
+            [nzSize]="deviceDetailSize"
+            formControlName="interval"
+          />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+
+  <!-- Device detail - input row route color -->
+  <div class="device-detail-input-row">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please choose route color (#xxxxxx)!">
+        <!-- Device detail - input row title -->
+        <div class="device-detail-input-row-title">route color</div>
+        <!-- Device detail - input row value -->
+        <div class="device-detail-input-row-value">
+          <input
+            type="text"
+            nz-input
+            style="width: 77px;"
+            [nzSize]="deviceDetailSize"
+            [value]="device.color"
+            [style.background]="device.color"
+            [(colorPicker)]="device.color"
+            [cpOutputFormat]="'hex'"
+            [cpAlphaChannel]="'disabled'"
+            [cpPosition]="'bottom'"
+            formControlName="color"
+          />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+</form>

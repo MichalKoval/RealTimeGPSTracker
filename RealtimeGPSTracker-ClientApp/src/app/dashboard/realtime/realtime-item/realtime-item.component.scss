@@ -1,0 +1,34 @@
+.realtime-item {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: space-around;
+    justify-content: space-between;
+}
+.realtime-item-select-box {
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.realtime-item-detail {
+    display: grid;
+    grid-template-columns: 20px 200px 95px 50px;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.realtime-item-detail-field {
+    padding-right: 15px;
+}
+
+.device-item-container-left {
+    float: left;
+    width: 8px;
+    height: 41px;
+}
+
+.device-item-status {
+    display: inline-block;
+    width: 102px;
+    margin: auto 0px auto 12px;
+}

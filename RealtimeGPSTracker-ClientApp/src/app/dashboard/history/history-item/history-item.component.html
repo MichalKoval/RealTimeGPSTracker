@@ -1,0 +1,54 @@
+<nz-skeleton *ngIf="!historyItem" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+<!-- Show trip details if not null -->
+<div
+  *ngIf="historyItem"
+  class="history-item"
+>
+  <!-- Trip select box -->
+  <div class="history-item-select-box">
+    <label nz-checkbox [(ngModel)]="isSelected"></label>
+  </div>
+  <div class="history-item-detail">
+    <!-- Trip datetime interval -->
+    <div class="history-item-detail-field">
+      <nz-list-item-meta [nzDescription]="'Timeline'">
+        <nz-list-item-meta-title *ngIf="historyItem.datetimeStart && historyItem.datetimeEnd">
+          <div class="history-item-detail-timeline">
+            <nz-timeline nzMode="left">
+              <nz-timeline-item [nzDot]="dotTemplate">Start: {{ fromUTCDatabaseToLocalClient(historyItem.datetimeStart) }}</nz-timeline-item>
+              <nz-timeline-item [nzDot]="dotTemplate">End: {{ fromUTCDatabaseToLocalClient(historyItem.datetimeEnd) }}</nz-timeline-item>
+            </nz-timeline>
+            <ng-template #dotTemplate>
+              <i nz-icon nzType="clock-circle-o" style="font-size: 16px;"></i>
+            </ng-template>
+          </div>    
+        </nz-list-item-meta-title>
+      </nz-list-item-meta>
+    </div>
+    <!-- Trip duration -->
+    <div class="history-item-detail-field">
+      <nz-list-item-meta [nzDescription]="'Duration'">
+        <nz-list-item-meta-title *ngIf="historyItem.duration">{{historyItem.duration}}</nz-list-item-meta-title>
+      </nz-list-item-meta>
+    </div>
+    <!-- Trip distance -->
+    <div class="history-item-detail-field">
+      <nz-list-item-meta [nzDescription]="'Distance'">
+        <nz-list-item-meta-title *ngIf="historyItem.distance">{{historyItem.distance }}</nz-list-item-meta-title>
+      </nz-list-item-meta>
+    </div>
+    <!-- Button to show trip coordinates on map -->
+    <div class="history-item-detail-field">      
+      <button
+        nz-button
+        [nzSize]="'small'"
+        nzType="default"
+        nz-tooltip
+        [nzTooltipTitle]="'Show on the map'"
+        nzTooltipPlacement="top"
+      >
+        <i nz-icon nzType="environment" nzTheme="outline"></i>
+      </button>
+    </div>
+  </div>
+</div>

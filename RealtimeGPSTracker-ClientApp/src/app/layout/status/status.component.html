@@ -1,0 +1,9 @@
+<ng-container *ngIf="type === 'offline'">
+  <div class="status-type status-dot status-offline">{{ type }}</div>
+</ng-container>
+<ng-container *ngIf="type === 'active'">
+  <div class="status-type status-dot status-active">{{ type }}</div>
+</ng-container>
+<ng-container *ngIf="type === 'away'">
+  <div class="status-type status-dot status-away">{{ type }}</div>
+</ng-container>

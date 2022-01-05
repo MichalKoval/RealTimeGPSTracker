@@ -1,0 +1,10 @@
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\bin\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.deps.json
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\bin\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.dll
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\bin\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.pdb
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.csproj.AssemblyReference.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.AssemblyInfoInputs.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.AssemblyInfo.cs
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.csproj.CoreCompileInputs.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.dll
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGpsTracker.Core\obj\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.pdb

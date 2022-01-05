@@ -1,0 +1,65 @@
+$item-width: 425px;
+$item-margin: 1rem;
+
+nz-date-picker {
+    margin: 0 8px 12px 0;
+}
+
+nz-range-picker {
+    margin: 0 8px 12px 0;
+    width: 344px;
+}
+
+nz-list {
+    padding-left: 48px;
+    padding-right: 28px;
+}
+
+.history-search-container {
+    display: block;
+    justify-content: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.history-search-query-container {
+    margin: 13px 40px 0px 40px;
+}
+
+.history-search-result-container {
+    margin: 0px;
+}
+
+.history-result-no-trips-container {
+    margin-bottom: 20px;
+}
+
+.history-result-infinite-list-container {
+    margin-top: 2px;
+    height: 300px;
+    //border: 1px solid #e8e8e8;
+    //border-radius: 3px;
+}
+
+.history-search-spinner {
+    margin: 12px 0px 18px 0px;
+}
+
+.history-search-error {
+    margin-top: 2px;
+    max-width: 442px;
+}
+
+.history-search-collapsible {
+    margin-top: 10px;
+    padding: 0px 10px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.history-search-divider {
+    margin: 15px 40px 0px 40px;
+}
+
+.history-search-divider nz-divider {
+    margin: 15px 0px 0px 0px;
+}

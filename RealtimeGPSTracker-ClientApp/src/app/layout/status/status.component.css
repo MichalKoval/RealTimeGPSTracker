@@ -1,0 +1,30 @@
+:host {
+    margin: 0px;
+    padding: 0px;
+}
+
+.status-type {
+    margin: 0px;
+    color: #888;
+    font-size: 12px;
+}
+
+.status-dot::before {
+    content:"\A";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    display:inline-block;
+    margin-right: 5px;
+}
+
+.status-offline::before {
+    background: #ec0000;
+}
+
+.status-active::before {
+    background: #00a00d;
+}
+.status-away::before{
+    background: #faad14;
+}

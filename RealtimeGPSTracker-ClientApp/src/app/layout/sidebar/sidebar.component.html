@@ -1,0 +1,47 @@
+<nz-sider
+  class="menu-sidebar"
+  nzCollapsible
+  [nzTheme]="sidebarTheme"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null"
+  [nzBreakpoint]="sidebarBreakpoint"
+  [nzWidth]="sidebarWidth"
+  [nzCollapsedWidth]="sidebarCollapsedWidth">  
+
+  <nz-card class="menu-sidebar-user-card" [nzActions]="[actionSetting, actionUser, actionLogout]">
+    <!-- <nz-card-meta
+      [nzAvatar]="avatarTemplate"
+      [nzTitle]="userName"
+      [nzDescription]="userDescription"
+    ></nz-card-meta> -->
+    <nz-card-meta
+      [nzTitle]="userName"
+      [nzDescription]="userDescription"
+    ></nz-card-meta>
+  </nz-card>
+  
+  <!-- <ng-template #avatarTemplate>
+    <nz-avatar [nzSize]="userAvatarSize" nzIcon="user"></nz-avatar>
+  </ng-template> -->
+  <ng-template #actionSetting>
+    <a class="menu-sidebar-action-icon" routerLink="settings" nzMatchRouter><i nz-icon nzType="setting"></i></a>
+  </ng-template>
+  <ng-template #actionUser>
+    <a class="menu-sidebar-action-icon" routerLink="user" nzMatchRouter><i nz-icon nzType="user"></i></a>
+  </ng-template>
+  <ng-template #actionLogout>
+    <a class="menu-sidebar-action-icon" (click)="onLogoutButtonPressed()"><i nz-icon nzType="logout"></i></a>
+  </ng-template>
+  
+  <ul class="menu-sidebar-list" nz-menu [nzTheme]="sidebarTheme" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li class="menu-card-list-divider" nz-menu-divider></li>
+    <li nz-menu-group class="menu-list" [nzTitle]="menuTitle">
+      <ul>
+        <li class="menu-divider" nz-menu-divider></li>
+        <li *ngFor="let menuItem of menuItems" nz-menu-item nzMatchRouter>
+          <a [routerLink]="menuItem.routerLink"><i nz-icon [nzType]="menuItem.iconType"></i>{{menuItem.title}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nz-sider>

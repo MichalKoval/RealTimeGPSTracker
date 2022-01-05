@@ -1,0 +1,2 @@
+export interface IFilterSettings {
+}

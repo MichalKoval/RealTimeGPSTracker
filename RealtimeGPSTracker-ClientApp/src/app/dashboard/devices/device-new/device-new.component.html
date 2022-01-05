@@ -1,0 +1,53 @@
+<div class="devices-new-container">
+  <!-- Device color -->
+  <div
+    class="device-new-container-left"
+    [style]="'background-color:' + device.color + ';'"
+  ></div>
+  <!-- Device card -->
+  <div class="device-new">
+    <!-- <div class="device-name">{{ data.name }}</div> -->
+    <!-- Device new - header -->
+    <div class="device-new-header">              
+      <h3 nz-typography>New device</h3>
+    </div>
+    <!-- Device new - body -->
+    <div class="device-new-body">
+      <!-- Device new - settings -->
+      <div class="device-new-settings">
+        <app-device-detail-input
+          [device]="device"
+          (deviceChange)="onDeviceDetailInputChange($event)"
+        >
+        </app-device-detail-input>
+        <!-- Device new - settings row confirm buttons-->
+        <div class="device-new-settings-row">
+          <div class="device-new-settings-confirm-buttons">
+            <ng-container>
+              <a class="device-new-settings-save-button" (click)="onSave()">
+                <i
+                  nz-icon
+                  nz-tooltip
+                  nzTooltipTitle="Save"
+                  nzType="check"
+                ></i>
+              </a>
+              <a class="device-new-settings-cancel-button" nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="onCanceledChange()">
+                <i
+                  nz-icon
+                  nz-tooltip
+                  nzTooltipTitle="Cancel"
+                  nzType="close"
+                ></i>
+              </a>
+            </ng-container>
+          </div>                
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="device-new-divider">
+  <nz-divider></nz-divider>
+</div>

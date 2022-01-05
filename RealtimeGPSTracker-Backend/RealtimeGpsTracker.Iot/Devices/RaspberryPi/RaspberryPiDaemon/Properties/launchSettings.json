@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "RaspberryPiDaemon": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "remoteDebugMachine": ""
+    }
+  }
+}

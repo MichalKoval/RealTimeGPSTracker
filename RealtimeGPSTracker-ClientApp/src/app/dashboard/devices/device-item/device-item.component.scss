@@ -1,0 +1,198 @@
+$debug: false;
+
+.device-item-container {
+    border: 0px;
+    //padding: 4px;
+    overflow: hidden;
+}
+
+.device-item-container-left {
+    float: left;
+    width: 9px;
+    height: 174px;
+}
+
+.device-item-container-right {
+    overflow: hidden;
+    padding: 4px;
+}
+
+.device-detail-header {
+    display: block;
+    border: 0px;
+    padding: 0px;
+    @if $debug { background-color: mediumspringgreen; }
+}
+
+.device-detail-body {
+    display: block;
+    border: 0px;
+    padding: 0px;
+    @if $debug { background-color: yellowgreen;  }
+}
+
+.device-detail-status {
+    display: inline-block;
+    width: 102px;
+    margin: auto 0px auto 12px;
+    @if $debug { background-color: greenyellow; }
+}
+
+.device-detail-creation-time {
+    display: inline-block;
+    margin: auto 0px;
+    @if $debug { background-color: hotpink; }
+}
+
+.device-detail-checkbox {
+    display: block;
+    margin: auto 3px auto 0px;
+    float: right;
+    @if $debug { background-color: lightblue; }
+}
+
+.device-detail-edit-button {
+    display: inline-block;
+    margin: auto 0px;
+    @if $debug { background-color: lightslategray; }
+}
+
+.device-detail-edit-button a {
+    margin: auto;
+    font-size: 18px;
+    float: right;
+    color: #697b8c;
+}
+
+.device-detail-edit-button a:hover {
+    color: #1890ff;
+}
+
+.device-detail-uuid {
+    display: inline-block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: tomato; }
+}
+
+.device-detail-uuid-qrcode {
+    display: block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: violet; }
+}
+
+.device-detail-uuid-button {
+    display: block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: turquoise; }
+}
+
+.uuid-button {
+    margin-left: 12px;
+    margin-bottom: 4px;    
+    width: 75px;
+    height: 25px;
+    font-size: 12px;
+    padding: 0px 4px 1px 4px;
+    font-weight: 600;
+}
+
+.device-detail-settings {
+    display: inline-block;
+    vertical-align: top;
+    width: 192px;
+    border: 0px;
+    padding: 0px;
+    margin: 4px 0px 0px 15px;
+    @if $debug { background-color: steelblue; }
+}
+
+.device-detail-settings-edit-buttons {
+    display: block;
+    float: right;
+    padding: 0px;
+}
+
+.device-detail-settings-edit-button {
+    display: inline-block;
+    margin: 0px 3px 0px 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #697b8c;
+}
+
+.device-detail-settings-edit-button:hover {
+    color: #1890ff;
+}
+
+.device-detail-settings-save-button {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #005504;
+}
+
+.device-detail-settings-save-button:hover {
+    color: #00cf0a;
+}
+
+.device-detail-settings-cancel-button {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #910000;
+}
+
+.device-detail-settings-cancel-button:hover {
+    color: #e00000;
+}
+
+.device-detail-settings-row {
+    display: block;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: slateblue; }
+}
+
+.device-detail-settings-row-title {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a7a7a7;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(73, 66, 117); }
+}
+
+.device-detail-settings-row-value {
+    display: block;
+    overflow: hidden;
+    height: 25px;
+    font-weight: 500;
+    color: #314659;
+    border: 0px;
+    margin: 0px;
+    @if $debug { background-color: rgb(51, 36, 151); }
+}
+
+.device-detail-settings-row-value input {
+    display: block;
+    width: 181px;
+    height: 21px;
+    padding: 0px 7px;
+    margin-top: 2px;
+    @if $debug { background-color: rgb(127, 116, 196); }
+}
+
+.device-detail-settings-row-value nz-tag {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    @if $debug { background-color: rgb(73, 64, 128); }
+}

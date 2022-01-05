@@ -1,0 +1,26 @@
+# --------- Module handshake at the begining -------------------
+echo 'AT' > /dev/ttyS0
+echo 'AT' > /dev/ttyS0
+
+# --------- GSM HTTP GET -----------------------------------
+echo 'AT+CREG?' > /dev/ttyS0
+echo 'AT+SAPBR=3,1,"APN","internet.t-mobile.cz"' > /dev/ttyS0
+echo 'AT+SAPBR=3,1,"USER","gprs"' > /dev/ttyS0
+echo 'AT+SAPBR=3,1,"PWD","gprs"' > /dev/ttyS0
+echo 'AT+SAPBR=1,1' > /dev/ttyS0
+echo 'AT+SAPBR=2,1' > /dev/ttyS0
+echo 'AT+HTTPINIT' > /dev/ttyS0
+echo 'AT+HTTPPARA="CID",1' > /dev/ttyS0
+echo 'AT+HTTPPARA="URL","www.google.com"' > /dev/ttyS0
+echo 'AT+HTTPACTION=0' > /dev/ttyS0
+echo 'AT+HTTPREAD' > /dev/ttyS0
+echo 'AT+HTTPTERM' > /dev/ttyS0
+echo 'AT+SAPBR=0,1' > /dev/ttyS0
+
+# --------- GNSS NMEA port start and stop-------------------
+echo 'AT+CGNSPWR=1' > /dev/ttyS0
+echo 'AT+CGNSPWR=0' > /dev/ttyS0
+echo 'AT+CGNSINF' > /dev/ttyS0
+
+# oneliner GSM HTTP GET - NOT TESTED
+echo 'AT+CREG?;+SAPBR=3,1,"APN","internet.t-mobile.cz";+SAPBR=3,1,"USER","gprs";+SAPBR=3,1,"PWD","gprs";+SAPBR=1,1;+SAPBR=2,1;+HTTPINIT;+HTTPPARA="CID",1;+HTTPPARA="URL","www.google.com";+HTTPACTION=0;+HTTPREAD;+HTTPTERM;+SAPBR=0,1' > /dev/ttyS0

@@ -1,0 +1,13 @@
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\bin\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.deps.json
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\bin\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.dll
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\bin\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.pdb
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\bin\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.dll
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\bin\Debug\netcoreapp3.1\RealtimeGpsTracker.Core.pdb
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.csproj.AssemblyReference.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.AssemblyInfoInputs.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.AssemblyInfo.cs
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.csproj.CoreCompileInputs.cache
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.csproj.CopyComplete
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.dll
+C:\Users\michk\Documents\GitHub\RealTimeGPSTrackerProject\RealtimeGPSTracker-Backend\RealtimeGPSTracker.Application\obj\Debug\netcoreapp3.1\RealtimeGPSTracker.Application.pdb

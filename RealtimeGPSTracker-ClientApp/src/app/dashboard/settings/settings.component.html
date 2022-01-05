@@ -1,0 +1,33 @@
+<div class="settings-content">        
+    <nz-divider nzText="Notifications" nzOrientation="left"></nz-divider>
+    
+    <div>
+        <p>You will be notified when there is a new online device to track on map</p>
+        <nz-switch
+            [ngModel]="(isRealtimeNotification$ | async)"
+            nzCheckedChildren="Realtime"
+            nzUnCheckedChildren="Realtime"
+            (ngModelChange)="onRealtimeNotificationChange()"
+        ></nz-switch>
+        <nz-divider></nz-divider>
+    </div>
+    <div>
+        <p>You will be notified when there is a trip finished and available to see in history</p>
+        <nz-switch
+            [ngModel]="(isHistoryNotification$ | async)"
+            nzCheckedChildren="History"
+            nzUnCheckedChildren="History"
+            (ngModelChange)="onHistoryNotificationChange()"
+        ></nz-switch>
+        <nz-divider></nz-divider>
+    </div>
+    <div>
+        <p>You will be notified when there is any change of status of a certain device</p>
+        <nz-switch
+            [ngModel]="(isDevicesNotification$ | async)"
+            nzCheckedChildren="Devices"
+            nzUnCheckedChildren="Devices"
+            (ngModelChange)="onDevicesNotificationChange()"
+        ></nz-switch>
+    </div>
+</div>

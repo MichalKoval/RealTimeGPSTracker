@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-right: 1px solid #e8e8e8;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+.menu-list {
+  margin-top: 3px;
+}
+
+.menu-list a {
+  /* color: #595959 */
+  color: inherit;
+}
+
+.menu-list a:hover {
+  color: #1890ff
+}
+
+.menu-sidebar-list {
+  border: 0px;
+}
+
+.menu-card-list-divider {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.menu-sidebar-user-card {
+  border: 0px;
+}
+
+.menu-sidebar-action-icon {
+  margin-top: 1px;
+}
+
+.menu-sidebar-action-icon i {
+  font-size: 16px;
+}

@@ -1,0 +1,167 @@
+<!-- Device card -->
+<div class="device-detail">
+  <!-- <div class="device-name">{{ data.name }}</div> -->
+  <!-- Device detail - header -->
+  <div class="device-detail-header">              
+      <!-- Device detail - status  -->
+    <div class="device-detail-status">
+      <ng-container *ngIf="device.status === 0">
+        <app-status [type]="'offline'"></app-status>
+      </ng-container>
+      <ng-container *ngIf="device.status === 1">
+        <app-status [type]="'active'"></app-status>
+      </ng-container>
+      <ng-container *ngIf="device.status === 2">
+        <app-status [type]="'away'"></app-status>
+      </ng-container>
+    </div>
+    <!-- Device detail - creation time -->
+    <div class="device-detail-creation-time">
+      <i 
+        class="creation-time-icon"
+        nz-icon
+        nz-tooltip
+        nzTooltipTitle="Creation time"
+        nzType="clock-circle"
+        nzTheme="outline"
+      ></i>
+      {{ fromUTCDatabaseToLocalClient(device.createTime) }}
+    </div>
+    <!-- Device detail - chechbox -->
+    <div class="device-detail-checkbox">
+      <label nz-checkbox [(ngModel)]="isSelected" (nzCheckedChange)="onSelectedChange()"></label>
+    </div>
+  </div>
+  <!-- Device detail - body -->
+  <div class="device-detail-body">
+    <!-- Device detail - uuid -->
+    <div class="device-detail-uuid">
+      <!-- Device detail - qrcode -->
+      <div class="device-detail-uuid-qrcode">
+        <!-- <div nz-row class="edit-device-settings">
+          <div class="edit-device-settings-title">uuid</div>
+        </div> --> 
+        <qrcode
+          [qrdata]="device.id"
+          [width]="10"
+          [scale]="3"
+          [errorCorrectionLevel]="'M'"
+        ></qrcode>
+      </div>
+      <!-- Device detail - show uuid button -->
+      <div class="device-detail-uuid-button">
+        <button
+          class="uuid-button"
+          nz-button
+          nz-popover
+          nzPopoverTitle="UUID"
+          [nzPopoverContent]="uuidPopover"
+          nzPopoverTrigger="click"
+        >Show UUID</button>
+        <ng-template #uuidPopover>
+          <span nz-text><code>{{ device.id }}</code></span>
+        </ng-template>
+      </div>
+    </div>
+    <!-- Device detail - settings -->
+    <div class="device-detail-settings">
+      <!-- Device detail - settings row name -->
+      <div class="device-detail-settings-row">
+        <!-- Device detail - settings row title -->
+        <div class="device-detail-settings-row-title">name</div>
+        <!-- Device detail - settings row value -->
+        <div class="device-detail-settings-row-value">
+          <ng-container *ngIf="!isEdited; else nameInputTpl">
+            {{ device.name }}
+          </ng-container>
+          <ng-template #nameInputTpl>
+            <input
+              type="text"
+              [nzSize]="deviceDetailSize"
+              nz-input
+              [(ngModel)]="device.name"
+            />
+          </ng-template>
+        </div>
+      </div>
+      <!-- Device detail - settings row interval (ms)-->
+      <div class="device-detail-settings-row">
+        <!-- Device detail - settings row title -->
+        <div class="device-detail-settings-row-title">interval (ms)</div>
+        <!-- Device detail - settings row value -->
+        <div class="device-detail-settings-row-value">
+          <ng-container *ngIf="!isEdited; else intervalInputTpl">
+            {{ device.interval }}
+          </ng-container>
+          <ng-template #intervalInputTpl>
+            <input
+              type="text"
+              nz-input
+              [nzSize]="deviceDetailSize"
+              [(ngModel)]="device.interval"
+            />
+          </ng-template>
+        </div>
+      </div>
+      <!-- Device detail - settings row route color -->
+      <div class="device-detail-settings-row">
+        <!-- Device detail - settings row title -->
+        <div class="device-detail-settings-row-title">route color</div>
+        <!-- Device detail - settings row value -->
+        <div class="device-detail-settings-row-value">
+          <ng-container *ngIf="!isEdited; else colorInputTpl">
+            <nz-tag [nzColor]="device.color"></nz-tag>                
+          </ng-container>
+          <ng-template #colorInputTpl>
+            <input
+              type="text"
+              style="width: 77px;"
+              nzSize="small"
+              nz-input
+              [value]="device.color"
+              [style.background]="device.color"
+              [(colorPicker)]="device.color"
+              [cpOutputFormat]="'hex'"
+              [cpAlphaChannel]="'disabled'"
+              [cpPosition]="'bottom'"
+              [(ngModel)]="device.color"
+            />
+          </ng-template>
+        </div>
+      </div>
+      <!-- Device detail - settings row edit buttons-->
+      <div class="device-detail-settings-row">
+        <div class="device-detail-settings-edit-buttons">
+          <ng-container *ngIf="!isEdited; else saveTpl">
+            <a class="device-detail-settings-edit-button" (click)="startEdit()">
+              <i
+                nz-icon
+                nz-tooltip
+                nzTooltipTitle="Edit"
+                nzType="edit"
+              ></i>
+            </a>
+          </ng-container>
+          <ng-template #saveTpl>
+            <a class="device-detail-settings-save-button" (click)="saveEdit()">
+              <i
+                nz-icon
+                nz-tooltip
+                nzTooltipTitle="Save"
+                nzType="check"
+              ></i>
+            </a>
+            <a class="device-detail-settings-cancel-button" nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit()">
+              <i
+                nz-icon
+                nz-tooltip
+                nzTooltipTitle="Cancel"
+                nzType="close"
+              ></i>
+            </a>
+          </ng-template>
+        </div>                
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<nz-skeleton *ngIf="!deviceItem" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+<!-- Show device details if not null -->
+<div
+  *ngIf="deviceItem"
+  class="realtime-item"
+>
+  <div class="realtime-item-detail">
+    <div
+      class="device-item-container-left"
+      [style]="'background-color:' + deviceItem.color + ';'"
+    ></div>
+    <!-- Device detail - name -->
+    <div class="realtime-item-detail-field">
+      <nz-list-item-meta>
+        <nz-list-item-meta-title *ngIf="deviceItem.name">{{deviceItem.name}}</nz-list-item-meta-title>
+      </nz-list-item-meta>
+    </div>
+    <!-- Device detail - status -->
+    <div class="realtime-item-detail-field">
+      <nz-list-item-meta>
+        <nz-list-item-meta-title *ngIf="deviceItem.status">
+          <div class="device-detail-status">
+            <ng-container *ngIf="deviceItem.status === 0">
+              <app-status [type]="'offline'"></app-status>
+            </ng-container>
+            <ng-container *ngIf="deviceItem.status === 1">
+              <app-status [type]="'active'"></app-status>
+            </ng-container>
+            <ng-container *ngIf="deviceItem.status === 2">
+              <app-status [type]="'away'"></app-status>
+            </ng-container>
+          </div>
+        </nz-list-item-meta-title>
+      </nz-list-item-meta>
+    </div>    
+    <!-- Button to show trip coordinates on map -->
+    <div class="realtime-item-detail-field">      
+      <button
+        nz-button
+        [nzSize]="'small'"
+        nzType="default"
+        nz-tooltip
+        [nzTooltipTitle]="'Show on the map'"
+        nzTooltipPlacement="top"
+      >
+        <i nz-icon nzType="environment" nzTheme="outline"></i>
+      </button>
+    </div>
+  </div>
+</div>

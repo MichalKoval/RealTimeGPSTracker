@@ -1,0 +1,25 @@
+.load-more {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.load-more-line {
+    height: 30px;
+}
+
+.load-more-button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.load-more-divider {
+    margin: 0px;
+}
+
+.load-more-divider nz-divider {
+    margin: 24px 0px 0px 0px; 
+}
+
+.load-no-more {
+    margin-top: 5px;
+}

@@ -1,0 +1,32 @@
+.history-item {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: space-around;
+    justify-content: space-between;
+}
+.history-item-select-box {
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.history-item-detail {
+    display: grid;
+    grid-template-columns: 250px 95px 95px 50px;
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+.history-item-detail-field {
+    vertical-align: top;
+    padding-right: 15px;
+}
+
+.history-item-detail-timeline {
+    margin-top: 10px;
+    padding-left: 3px;
+    height: 61px;
+}
+
+.history-item-detail-show-on-map {
+    vertical-align: bottom;
+}

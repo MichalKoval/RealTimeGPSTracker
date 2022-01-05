@@ -1,0 +1,68 @@
+<div class="history-search-container">
+    <!-- History search query -->
+    <div class="history-search-query-container">
+        <app-history-search
+            [selectedOrder]="(historyData$ | async).settings.sort.order"
+            (selectedOrderChange)="onSelectedOrderChange($event)"
+            [selectedOrderBy]="(historyData$ | async).settings.sort.orderBy"
+            (selectedOrderByChange)="onSelectedOrderByChange($event)"
+            (selectedIntervalChange)="onIntervalChange($event)"
+            (searchClick)="onSearchHistory()"
+        ></app-history-search>
+    </div>
+    <!-- History search query result -->
+    <div *ngIf="(historyDataSettings$ | async).searchInProgress">
+        <div class="history-search-result-container">
+            <div *ngIf="!(historyDataIsLoading$ | async); else spinner">
+                <!-- <nz-divider nzText="Search result" nzOrientation="center"></nz-divider> -->
+                
+                <div *ngIf="(historyDataLoaded$ | async); else error">
+                    <div class="history-search-divider">
+                        <nz-divider></nz-divider>
+                    </div>
+                    <div *ngIf="(historyData$ | async).historyItems.length > 0, else noHistoryDataTemplate">
+                        <cdk-virtual-scroll-viewport itemSize="73" class="history-result-infinite-list-container">
+                            <nz-list>                            
+                                <nz-list-item *cdkVirtualFor="let historyItem of (historyData$ | async).historyItems">
+                                <app-history-item
+                                    [historyItem]="historyItem"
+                                    (isSelectedChange)="onHistoryItemSelectedChange()"
+                                ></app-history-item>
+                                </nz-list-item>                            
+                            </nz-list>
+                        </cdk-virtual-scroll-viewport>  
+                    </div>
+                    <ng-template #noHistoryDataTemplate>
+                        <div class="history-result-no-trips-container">
+                            <nz-empty
+                                [nzNotFoundImage]="'simple'"
+                                [nzNotFoundContent]="'No trips found for the given date and time interval'"
+                            ></nz-empty>
+                        </div>
+                    </ng-template>                        
+                </div>
+                <ng-template #error>
+                    <div nz-row nzJustify="center" nzAlign="middle">
+                        <nz-alert
+                            nzType="error"
+                            nzMessage="Error"
+                            [nzDescription]="(historyDataError$ | async).join('\n')"
+                            class="history-search-error"
+                        >
+                        </nz-alert>
+                    </div>
+                </ng-template>
+            </div>
+            <ng-template #spinner>
+            <div nz-row nzJustify="center" nzAlign="middle" class="history-search-spinner">
+                <nz-spin nzSimple></nz-spin>
+            </div>
+            </ng-template>
+        </div>
+    </div>
+    
+</div>
+
+<app-map
+    [resize]="(isLeftSidebarCollapsed$ | async)"
+></app-map>

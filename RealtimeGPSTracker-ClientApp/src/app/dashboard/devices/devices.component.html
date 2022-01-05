@@ -1,0 +1,131 @@
+<div *ngIf="(devicesDataLoaded$ | async); else error">
+  <!-- Devices list filter -->
+  <div class="devices-filter-container">
+    <app-device-filter
+      [selectedFilterCriteria]="(devicesDataSettings$ | async).filter.criteria"
+      (selectedFilterCriteriaChange)="onSelectedFilterCriteriaChange($event)"
+      [selectedOrder]="(devicesDataSettings$ | async).sort.order"
+      (selectedOrderChange)="onSelectedOrderChange($event)"
+      [selectedOrderBy]="(devicesDataSettings$ | async).sort.orderBy"
+      (selectedOrderByChange)="onSelectedOrderByChange($event)"
+      [deviceCounts]="(devicesDataSettings$ | async).count"
+    ></app-device-filter>
+  </div>
+
+  <!-- Add device container which by default is hidden -->
+  <div *ngIf="showAddDeviceContainer" class="devices-new-container">
+    <app-device-item
+      [deviceItem]="emptyDevicesItem"
+      (deviceItemChange)="onDevicesItemChange($event)"
+    ></app-device-item>
+  </div>
+  
+  <!-- Devices list based on filters -->
+  <div
+    [ngStyle]="{'height': 'calc(100vh - ' + deviceListContainerHeight + 'px)'}"
+    class="devices-list-container">
+    <div class="devices-list-inner-container">    
+      <div class="grid-container">
+        <ng-template ngFor let-devicesDataItem [ngForOf]="(devicesData$ | async)">
+          <div class="grid-container-item">
+            <!-- Editable device detail card -->
+            <app-device-item
+              [deviceItem]="devicesDataItem"
+              (deviceItemChange)="onDevicesItemChange($event)"
+            ></app-device-item>
+          </div>
+        </ng-template>
+      </div>
+      <!-- Load more devices container -->
+      <app-loader
+        [pageIndex]="(devicesDataSettings$ | async).pagination.pageIndex"
+        (pageIndexChange)="onPageIndexChange($event)"
+        [pageSize]="(devicesDataSettings$ | async).pagination.pageSize"
+        [totalItemsCount]="(devicesDataSettings$ | async).pagination.totalItemsCount"
+        [noMoreItemsTitle]="'No more devices'"
+        [isLoading]="(devicesDataLoading$ | async)"
+      ></app-loader>   
+    </div>
+  </div>
+</div>    
+
+<!-- Devices error container -->
+<ng-template #error>      
+  <div nz-row nzJustify="center" nzAlign="middle">
+    <div *ngIf="(devicesDataError$ | async)">
+      <nz-alert
+        nzType="error"
+        [nzDescription]="(devicesDataError$ | async).join('\n')"
+        class="devices-error"
+      >
+      </nz-alert>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Add and Delete device buttons container -->
+<div class="devices-float-button-container">
+  <div class="devices-float-button-container-group">
+    <!-- Delete button -->
+    <div *ngIf="(selectedDevicesCount > 0)">
+      <button
+        nz-button
+        nzType="default"
+        [nzSize]="'large'"
+        [nzShape]="(selectedDevicesCount > 1) ? 'round' : 'circle'"
+        nz-tooltip
+        [nzTooltipTitle]="(selectedDevicesCount > 1) ? 'Delete devices' : 'Delete device'"
+        nzTooltipPlacement="top"
+        class="devices-float-button devices-float-button-container-shadow"
+        (click)="onAddDeviceButtonClick()"
+      >
+        <i
+          nz-icon
+          nzType="delete"
+          nzTheme="outline"
+          class="devices-delete-button-icon"
+        ></i>
+        <ng-container *ngIf="(selectedDevicesCount > 1)">{{ selectedDevicesCount }}</ng-container>
+      </button>
+    </div>
+    <!-- Add button -->
+    <div *ngIf="!showAddDeviceContainer">
+      <button
+        nz-button
+        nzType="default"
+        [nzSize]="'large'"
+        nzShape="circle"
+        nz-tooltip
+        [nzTooltipTitle]="'Add device'"
+        nzTooltipPlacement="top"
+        class="devices-float-button devices-float-button-container-shadow"
+        (click)="onAddDeviceButtonClick()"
+      >
+        <i
+          nz-icon
+          nzType="appstore-add"
+          nzTheme="outline"
+          class="devices-add-button-icon"
+        ></i>
+      </button>
+    </div>      
+  </div>    
+</div>
+
+<!-- Add device container which by default is hidden -->
+<!-- <nz-drawer
+  [nzMaskClosable]="false"
+  [nzVisible]="showAddDeviceContainer"
+  [nzPlacement]="'bottom'"
+  [nzHeight]="290"
+  nzTitle="Add Device"
+  (nzOnClose)="onAddDeviceCancelClick()"
+>
+  <app-device-new
+    [device]="emptyDevicesItem.device"
+    (device)="onDeviceChange($event)"
+    (isCanceledChange)="onAddDeviceCancelClick()"
+  ></app-device-new>
+</nz-drawer> -->
+
+
